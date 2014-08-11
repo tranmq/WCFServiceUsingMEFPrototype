@@ -1,8 +1,11 @@
-﻿using System.Xml.Linq;
+﻿using System.ComponentModel.Composition;
+using System.Xml.Linq;
 using WrgConfigService.Contracts;
 
 namespace WrgConfigService.Implementations
 {
+    [Export]
+    [Export(typeof(IControllerConfigService))]
     public class ControllerConfigService : IControllerConfigService
     {
         public ControllerConfiguration GetControllerConfig(string controllerId)
