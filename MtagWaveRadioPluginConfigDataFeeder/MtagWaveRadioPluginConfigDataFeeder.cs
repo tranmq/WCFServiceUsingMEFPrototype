@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections.Generic;
+using System.ComponentModel.Composition;
 using Shared;
 using WaveRadio;
 
@@ -27,7 +28,7 @@ namespace MtagWaveRadioPluginConfigDataFeeder
                         ChannelBaseAddress = "192.168.42.42",
                         WtcRootUser = "mtagRoot"
                     },
-                    WaveProfileList = new WaveProfileList
+                    WaveProfileList = new List<WaveProfile>
                     {
                         new WaveProfile
                         {
@@ -36,7 +37,7 @@ namespace MtagWaveRadioPluginConfigDataFeeder
                             Name = "MTAG Profile"
                         }
                     },
-                    WaveZoneList = new WaveZoneList
+                    WaveZoneList = new List<WaveZone>
                     {
                         new WaveZone
                         {

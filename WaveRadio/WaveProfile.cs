@@ -3,8 +3,6 @@ using System.Xml.Serialization;
 
 namespace WaveRadio
 {
-    [Serializable]
-    [XmlRoot("Profile")]
     public class WaveProfile
     {
         [XmlAttribute("Name")]

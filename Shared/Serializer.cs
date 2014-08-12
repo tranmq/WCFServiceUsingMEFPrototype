@@ -44,7 +44,9 @@ namespace Shared
             using (var streamWriter = new StreamWriter(memoryStream, Encoding.UTF8))
             {
                 var xmlSerializer = new XmlSerializer(typeof (T));
-                xmlSerializer.Serialize(streamWriter, obj);
+                var ns = new XmlSerializerNamespaces();
+                ns.Add("","");
+                xmlSerializer.Serialize(streamWriter, obj, ns);
                 memoryStream.Position = 0;
                 return XDocument.Load(memoryStream).Root;
             }

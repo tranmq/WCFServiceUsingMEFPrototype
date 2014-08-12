@@ -8,6 +8,8 @@ namespace WaveRadio
     [Export(typeof(IRadioPluginConfigDataExtractor))]
     public class WaveRadioPluginConfigDataExtractor : IRadioPluginConfigDataExtractor
     {
+        // This should be instantiated via dependency injection.  I initiate it here for simplicity.
+        private readonly ISerializer _serializer = new Serializer();
         public string RadioType
         {
             get { return "wave"; }
@@ -17,8 +19,8 @@ namespace WaveRadio
         {
             var waveRadioConfig = configData as WaveRadioPluginConfig;
             Debug.Assert(waveRadioConfig != null);
-
-            return null;
+            var toBeReturned = _serializer.Serialize(waveRadioConfig);
+            return toBeReturned;
         }
     }
 }

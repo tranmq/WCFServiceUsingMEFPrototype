@@ -11,20 +11,12 @@ namespace WaveRadio
         [XmlElement("Settings")]
         public WaveSettings WaveSettings { get; set; }
 
-        [XmlElement("Profiles")]
-        public WaveProfileList WaveProfileList { get; set; }
+        [XmlArray("Profiles")]
+        [XmlArrayItem("Profile")]
+        public List<WaveProfile> WaveProfileList { get; set; }
 
-        [XmlElement("Zones")]
-        public WaveZoneList WaveZoneList { get; set; }
-    }
-
-    [Serializable]
-    public class WaveProfileList : List<WaveProfile>
-    {
-    }
-
-    [Serializable]
-    public class WaveZoneList : List<WaveZone>
-    {
+        [XmlArray("Zones")]
+        [XmlArrayItem("Zone")]
+        public List<WaveZone> WaveZoneList { get; set; }
     }
 }

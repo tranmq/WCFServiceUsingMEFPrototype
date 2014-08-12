@@ -35,9 +35,8 @@ namespace MtagData
                 {
                     continue;;
                 }
-                var radioPluginData = new RadioPluginData {RadioType = radio};
                 var correspondingConfigFeeder = _radioConfigFeeders.Single(x => x.RadioType == radio);
-                radioPluginData.ConfigData = correspondingConfigFeeder.GetRadioConfigData();
+                var radioPluginData = correspondingConfigFeeder.GetRadioConfigData();
                 toBeReturned.Add(radioPluginData);
             }
 

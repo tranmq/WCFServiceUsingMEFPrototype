@@ -1,10 +1,7 @@
-﻿using System;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
 namespace WaveRadio
 {
-    [Serializable]
-    [XmlRoot("Zone")]
     public class WaveZone
     {
         [XmlAttribute("Name")]
