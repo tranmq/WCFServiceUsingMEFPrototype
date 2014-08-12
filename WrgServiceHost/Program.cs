@@ -9,19 +9,19 @@ namespace WrgServiceHost
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             var serviceAssemblyCatalog = new AssemblyCatalog(typeof (ControllerConfigService).Assembly);
             var aggregateCatalog = new AggregateCatalog(serviceAssemblyCatalog);
             var compositionContainer = new CompositionContainer(aggregateCatalog,
                                                                 CompositionOptions.DisableSilentRejection | CompositionOptions.IsThreadSafe);
-            var sh = new ComposedServiceHost(typeof (ControllerConfigService), compositionContainer, new Uri("http://localhost:8080"));
+            var serviceHost = new ComposedServiceHost(typeof (ControllerConfigService), compositionContainer, new Uri("http://localhost:8080"));
             bool openSucceeded = false;
             try
             {
-                ServiceEndpoint se = sh.AddServiceEndpoint(typeof (IControllerConfigService), new WebHttpBinding(), "WrgConfigService");
-                se.Behaviors.Add(new WebHttpBehavior());
-                sh.Open();
+                ServiceEndpoint serviceEndpoint = serviceHost.AddServiceEndpoint(typeof (IControllerConfigService), new WebHttpBinding(), "WrgConfigService");
+                serviceEndpoint.Behaviors.Add(new WebHttpBehavior());
+                serviceHost.Open();
                 openSucceeded = true;
             }
             catch (Exception ex)
@@ -32,14 +32,14 @@ namespace WrgServiceHost
             {
                 if (! openSucceeded)
                 {
-                    sh.Abort();
+                    serviceHost.Abort();
                 }
             }
 
             if (openSucceeded)
             {
                 Console.WriteLine("Service is running...");
-                foreach (var endpoint in sh.Description.Endpoints)
+                foreach (var endpoint in serviceHost.Description.Endpoints)
                 {
                     Console.WriteLine("\tAddress: {0}", endpoint.Address.Uri);
                     Console.WriteLine("\t\tContract Name:{0}", endpoint.Contract.Name);
@@ -55,7 +55,7 @@ namespace WrgServiceHost
             bool closeSucceeded = false;
             try
             {
-                sh.Close();
+                serviceHost.Close();
                 closeSucceeded = true;
             }
             catch (Exception ex)
@@ -68,7 +68,7 @@ namespace WrgServiceHost
             {
                 if (! closeSucceeded)
                 {
-                    sh.Abort();
+                    serviceHost.Abort();
                 }
             }
         }
