@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
 using Shared;
@@ -12,15 +11,36 @@ namespace MtagData
         // In real case, this is populated from a data source.
         private static readonly List<string> SupportedRadios = new List<string> {"wave", "connect+"};
 
+        private readonly IEnumerable<IRadioConfigFeeder> _radioConfigFeeders;
+
+        [ImportingConstructor]
+        public MtagDataFeeder([ImportMany("mtag", typeof(IRadioConfigFeeder))] IEnumerable<IRadioConfigFeeder> radioConfigFeeders)
+        {
+            _radioConfigFeeders = radioConfigFeeders;
+        }
+
         public string SystemType
         {
             get { return "mtag"; }
         }
 
-        public List<RadioConfigData> GetRadioConfigDataList(string controllerId)
+        public List<RadioPluginData> GetRadioConfigDataList(string controllerId)
         {
             // controller ID is ignored in MTAG.
-            var toBeReturned = SupportedRadios.Select(radio => new RadioConfigData { RadioType = radio, ConfigData = DateTime.Now }).ToList();
+            var toBeReturned = new List<RadioPluginData>();
+
+            foreach (var radio in SupportedRadios)
+            {
+                if (_radioConfigFeeders.All(x => x.RadioType != radio))
+                {
+                    continue;;
+                }
+                var radioPluginData = new RadioPluginData {RadioType = radio};
+                var correspondingConfigFeeder = _radioConfigFeeders.Single(x => x.RadioType == radio);
+                radioPluginData.ConfigData = correspondingConfigFeeder.GetRadioConfigData();
+                toBeReturned.Add(radioPluginData);
+            }
+
             return toBeReturned;
         }
     }

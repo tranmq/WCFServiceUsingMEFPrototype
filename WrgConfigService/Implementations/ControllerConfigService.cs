@@ -31,13 +31,7 @@ namespace WrgConfigService.Implementations
             var dataFeeder = _dataFeeders.Single(x => x.SystemType == ConfigurationManager.AppSettings["SystemType"]);
             var radioConfigDataList = dataFeeder.GetRadioConfigDataList(controllerId);
 
-            var radioPlugin1 = new RadioPlugin
-            {
-                PluginName = "WAVERadioPlugin"
-            };
-            var radioPlugin1Config = XElement.Parse("<WAVE><Settings><Profiles><Profile Name='Default Profile' /></Profiles></Settings></WAVE>");
-            radioPlugin1.RadioConfig = radioPlugin1Config;
-            controllerConfiguration.RadioPlugins.Add(radioPlugin1);
+
 
             var radioPlugin2 = new RadioPlugin
             {

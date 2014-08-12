@@ -2,7 +2,7 @@
 
 namespace Shared
 {
-    public interface IRadioConfigExtractor
+    public interface IRadioPluginConfigDataExtractor
     {
         string RadioType { get; }
 

@@ -3,6 +3,6 @@
     public interface IRadioConfigFeeder
     {
         string RadioType { get; }
-        RadioConfigData GetRadioConfigData();
+        RadioPluginData GetRadioConfigData();
     }
 }

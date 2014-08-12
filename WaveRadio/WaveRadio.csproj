@@ -4,18 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{C7D8C843-F75B-4957-B2C6-3A99A1CBF881}</ProjectGuid>
+    <ProjectGuid>{C7FF0D9A-4B7B-45F2-9A91-71C1C9BAAC7D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WrgConfigService</RootNamespace>
-    <AssemblyName>WrgConfigService</AssemblyName>
-    <ProjectTypeGuids>{3D9AD99F-2412-4246-B90B-4EAA41C64699};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <StartArguments>/client:"WcfTestClient.exe"</StartArguments>
+    <RootNamespace>WaveRadio</RootNamespace>
+    <AssemblyName>WaveRadio</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
-    <XsdCodeGenEnabled>True</XsdCodeGenEnabled>
+    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,53 +30,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.Composition.Registration" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.ServiceModel.Web" />
-    <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\ControllerConfiguration.cs" />
-    <Compile Include="Contracts\IControllerConfigService.cs" />
-    <Compile Include="Contracts\RadioPlugin.cs" />
-    <Compile Include="Contracts\RadioPluginList.cs" />
-    <Compile Include="Implementations\ControllerConfigService.cs" />
+    <Compile Include="WaveProfile.cs" />
+    <Compile Include="WaveRadioPluginConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WaveRadioPluginConfigDataExtractor.cs" />
+    <Compile Include="WaveSettings.cs" />
+    <Compile Include="WaveZone.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{dc597a9e-2d5c-43f5-bc29-910587755538}</Project>
       <Name>Shared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WaveRadio\WaveRadio.csproj">
-      <Project>{c7ff0d9a-4b7b-45f2-9a91-71c1c9baac7d}</Project>
-      <Name>WaveRadio</Name>
-    </ProjectReference>
   </ItemGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio</VSToolsPath>
-    <WcfServiceModelTargetPath>$(VSToolsPath)\WCF</WcfServiceModelTargetPath>
-  </PropertyGroup>
-  <Import Project="$(WcfServiceModelTargetPath)\Microsoft.VisualStudio.ServiceModel.targets" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{3D9AD99F-2412-4246-B90B-4EAA41C64699}">
-        <WcfProjectProperties>
-          <AutoStart>True</AutoStart>
-        </WcfProjectProperties>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
