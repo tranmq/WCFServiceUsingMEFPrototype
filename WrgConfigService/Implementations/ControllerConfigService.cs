@@ -1,5 +1,10 @@
-﻿using System.ComponentModel.Composition;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel.Composition;
+using System.Configuration;
+using System.Linq;
 using System.Xml.Linq;
+using Shared;
 using WrgConfigService.Contracts;
 
 namespace WrgConfigService.Implementations
@@ -8,12 +13,23 @@ namespace WrgConfigService.Implementations
     [Export(typeof(IControllerConfigService))]
     public class ControllerConfigService : IControllerConfigService
     {
+        private readonly IEnumerable<IDataFeeder> _dataFeeders;
+
+        [ImportingConstructor]
+        public ControllerConfigService([ImportMany] IEnumerable<IDataFeeder> dataFeeders)
+        {
+            _dataFeeders = dataFeeders;
+        }
+
         public ControllerConfiguration GetControllerConfig(string controllerId)
         {
             var controllerConfiguration = new ControllerConfiguration
             {
                 RadioPlugins = new RadioPluginList()
             };
+
+            var dataFeeder = _dataFeeders.Single(x => x.SystemType == ConfigurationManager.AppSettings["SystemType"]);
+            var radioConfigDataList = dataFeeder.GetRadioConfigDataList(controllerId);
 
             var radioPlugin1 = new RadioPlugin
             {

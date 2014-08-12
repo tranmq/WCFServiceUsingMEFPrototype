@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Composition.Hosting;
+using System.Configuration;
 using System.ServiceModel;
 using System.ServiceModel.Description;
 using WrgConfigService.Contracts;
@@ -12,7 +13,8 @@ namespace WrgServiceHost
         private static void Main()
         {
             var serviceAssemblyCatalog = new AssemblyCatalog(typeof (ControllerConfigService).Assembly);
-            var aggregateCatalog = new AggregateCatalog(serviceAssemblyCatalog);
+            var pluginDirCatalog = new DirectoryCatalog(ConfigurationManager.AppSettings["PluginDir"]);
+            var aggregateCatalog = new AggregateCatalog(serviceAssemblyCatalog, pluginDirCatalog);
             var compositionContainer = new CompositionContainer(aggregateCatalog,
                                                                 CompositionOptions.DisableSilentRejection | CompositionOptions.IsThreadSafe);
             var serviceHost = new ComposedServiceHost(typeof (ControllerConfigService), compositionContainer, new Uri("http://localhost:8080"));

@@ -9,7 +9,7 @@ namespace WrgConfigService.Contracts
         [DataMember(Name = "Name", Order = 1)]
         public string PluginName;
 
-        [DataMember(Name = "Config", Order = 1)]
+        [DataMember(Name = "Config", Order = 2)]
         public XElement RadioConfig;
     }
 }
