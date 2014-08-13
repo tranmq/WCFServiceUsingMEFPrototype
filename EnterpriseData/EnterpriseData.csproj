@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4838106E-03BB-44E8-B68D-9613A127B310}</ProjectGuid>
+    <ProjectGuid>{80EFFB89-1E8F-4ADD-8F4B-69C9BFDF1744}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MtagWaveRadioPluginConfigDataFeeder</RootNamespace>
-    <AssemblyName>MtagWaveRadioPluginConfigDataFeeder</AssemblyName>
+    <RootNamespace>EnterpriseData</RootNamespace>
+    <AssemblyName>EnterpriseData</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,17 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RadioDataFeeder.cs" />
+    <Compile Include="EnterpriseDataFeeder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{dc597a9e-2d5c-43f5-bc29-910587755538}</Project>
       <Name>Shared</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WaveRadio\WaveRadio.csproj">
-      <Project>{c7ff0d9a-4b7b-45f2-9a91-71c1c9baac7d}</Project>
-      <Name>WaveRadio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

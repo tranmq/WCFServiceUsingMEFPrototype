@@ -33,7 +33,7 @@ namespace MtagData
             {
                 if (_radioConfigFeeders.All(x => x.RadioType != radio))
                 {
-                    continue;;
+                    continue;
                 }
                 var correspondingConfigFeeder = _radioConfigFeeders.Single(x => x.RadioType == radio);
                 var radioPluginData = correspondingConfigFeeder.GetRadioConfigData();

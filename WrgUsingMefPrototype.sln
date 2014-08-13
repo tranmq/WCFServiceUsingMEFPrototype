@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30110.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WrgConfigService", "WrgConfigService\WrgConfigService.csproj", "{C7D8C843-F75B-4957-B2C6-3A99A1CBF881}"
 EndProject
@@ -16,6 +16,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WaveRadio", "WaveRadio\WaveRadio.csproj", "{C7FF0D9A-4B7B-45F2-9A91-71C1C9BAAC7D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtagWaveRadioPluginConfigDataFeeder", "MtagWaveRadioPluginConfigDataFeeder\MtagWaveRadioPluginConfigDataFeeder.csproj", "{4838106E-03BB-44E8-B68D-9613A127B310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConnectPlusRadio", "ConnectPlusRadio\ConnectPlusRadio.csproj", "{7358A392-DBE2-49C0-ADC7-4576F13E993B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MtagConnectPlusRadioPluginConfigDataFeeder", "MtagConnectPlusRadioPluginConfigDataFeeder\MtagConnectPlusRadioPluginConfigDataFeeder.csproj", "{C93A719F-6E29-4651-8449-F9256C040D1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseData", "EnterpriseData\EnterpriseData.csproj", "{80EFFB89-1E8F-4ADD-8F4B-69C9BFDF1744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseWaveRadioPluginConfigDataFeeder", "EnterpriseWaveRadioPluginConfigDataFeeder\EnterpriseWaveRadioPluginConfigDataFeeder.csproj", "{D1BC75EC-7F33-40A9-8F5D-C817B7F11083}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +55,22 @@ Global
 		{4838106E-03BB-44E8-B68D-9613A127B310}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4838106E-03BB-44E8-B68D-9613A127B310}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4838106E-03BB-44E8-B68D-9613A127B310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7358A392-DBE2-49C0-ADC7-4576F13E993B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7358A392-DBE2-49C0-ADC7-4576F13E993B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7358A392-DBE2-49C0-ADC7-4576F13E993B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7358A392-DBE2-49C0-ADC7-4576F13E993B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C93A719F-6E29-4651-8449-F9256C040D1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C93A719F-6E29-4651-8449-F9256C040D1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C93A719F-6E29-4651-8449-F9256C040D1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C93A719F-6E29-4651-8449-F9256C040D1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80EFFB89-1E8F-4ADD-8F4B-69C9BFDF1744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80EFFB89-1E8F-4ADD-8F4B-69C9BFDF1744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80EFFB89-1E8F-4ADD-8F4B-69C9BFDF1744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80EFFB89-1E8F-4ADD-8F4B-69C9BFDF1744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1BC75EC-7F33-40A9-8F5D-C817B7F11083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1BC75EC-7F33-40A9-8F5D-C817B7F11083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1BC75EC-7F33-40A9-8F5D-C817B7F11083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1BC75EC-7F33-40A9-8F5D-C817B7F11083}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,5 +79,9 @@ Global
 		{10D1783C-BD5D-4A5F-9BAA-245937EB0D72} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
 		{C7FF0D9A-4B7B-45F2-9A91-71C1C9BAAC7D} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
 		{4838106E-03BB-44E8-B68D-9613A127B310} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
+		{7358A392-DBE2-49C0-ADC7-4576F13E993B} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
+		{C93A719F-6E29-4651-8449-F9256C040D1E} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
+		{80EFFB89-1E8F-4ADD-8F4B-69C9BFDF1744} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
+		{D1BC75EC-7F33-40A9-8F5D-C817B7F11083} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
 	EndGlobalSection
 EndGlobal
