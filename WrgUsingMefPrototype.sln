@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseData", "Enterpris
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseWaveRadioPluginConfigDataFeeder", "EnterpriseWaveRadioPluginConfigDataFeeder\EnterpriseWaveRadioPluginConfigDataFeeder.csproj", "{D1BC75EC-7F33-40A9-8F5D-C817B7F11083}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnterpriseConnectPlusRadioPluginConfigDataFeeder", "EnterpriseConnectPlusRadioPluginConfigDataFeeder\EnterpriseConnectPlusRadioPluginConfigDataFeeder.csproj", "{B11A0FEE-A9CB-4BC9-8952-84DA6674BFE6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{D1BC75EC-7F33-40A9-8F5D-C817B7F11083}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1BC75EC-7F33-40A9-8F5D-C817B7F11083}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1BC75EC-7F33-40A9-8F5D-C817B7F11083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B11A0FEE-A9CB-4BC9-8952-84DA6674BFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B11A0FEE-A9CB-4BC9-8952-84DA6674BFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B11A0FEE-A9CB-4BC9-8952-84DA6674BFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B11A0FEE-A9CB-4BC9-8952-84DA6674BFE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,5 +89,6 @@ Global
 		{C93A719F-6E29-4651-8449-F9256C040D1E} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
 		{80EFFB89-1E8F-4ADD-8F4B-69C9BFDF1744} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
 		{D1BC75EC-7F33-40A9-8F5D-C817B7F11083} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
+		{B11A0FEE-A9CB-4BC9-8952-84DA6674BFE6} = {58BAA451-F1DF-4AAD-B23F-6A5263505811}
 	EndGlobalSection
 EndGlobal
